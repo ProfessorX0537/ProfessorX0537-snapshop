@@ -23,9 +23,9 @@ public class SnapShopGUI extends JFrame {
         fileButtons.setFunctionPanel(functionButtons);
 
         setVisible(true);
-        setSize(500, 500);
+        setTitle("TCSS 305 - Assignment 3");
+        setSize(800, 200);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        //javax.swing.JOptionPane.showMessageDialog(null, "SnapShop placeholder");
     }
 }

@@ -30,14 +30,21 @@ public class FunctionsButtonPanel extends JPanel {
     private void FunctionsButtonActionListener(int buttonNum) {
 
         switch (buttonNum) {
+            //Edge Detect
             case 0 -> {System.out.println(names[buttonNum]);
                 //new EdgeDetectFilter().filter();
             }
+            //Edge Highlight
             case 1 -> System.out.println(names[buttonNum]);
+            //Flip Horizontal
             case 2 -> System.out.println(names[buttonNum]);
+            // Flip Vertical
             case 3 -> System.out.println(names[buttonNum]);
+            //Grayscale
             case 4 -> System.out.println(names[buttonNum]);
+            //Sharpen
             case 5 -> System.out.println(names[buttonNum]);
+            //Soften
             case 6 -> System.out.println(names[buttonNum]);
         }
     }

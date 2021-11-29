@@ -21,12 +21,15 @@ public class FileButtonPanel extends JPanel {
 
     private void FileButtonActionListener(int buttonNum) {
         switch(buttonNum) {
+            //Open...
             case 0 -> {
                 System.out.println(Title[buttonNum]);
                 FileButtonEnabler(true);
                 functionPanel.FunctionButtonEnabler(true);
             }
+            //Save as...
             case 1 -> System.out.println(Title[buttonNum]);
+            //Close Image
             case 2 -> {
                 System.out.println(Title[buttonNum]);
                 FileButtonEnabler(false);
