@@ -2,11 +2,8 @@
 
 package gui;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
 
 /**
  * 
@@ -14,9 +11,9 @@ import java.io.File;
  * @version 0.1
  */
 public class SnapShopGUI extends JFrame {
-    FunctionsButtonPanel functionButtons = new FunctionsButtonPanel();
-    FileButtonPanel fileButtons = new FileButtonPanel();
-    ImagePanel imagePanel = new ImagePanel();
+    private static final FunctionsButtonPanel functionButtons = new FunctionsButtonPanel();
+    private static final FileButtonPanel fileButtons = new FileButtonPanel();
+    public static ImagePanel imagePanel = new ImagePanel();
 
     /**
      * 
@@ -27,6 +24,7 @@ public class SnapShopGUI extends JFrame {
         add(imagePanel, BorderLayout.CENTER);
         fileButtons.setFunctionPanel(functionButtons);
         fileButtons.setIP(imagePanel);
+        functionButtons.setIP(imagePanel);
 
 
         setVisible(true);

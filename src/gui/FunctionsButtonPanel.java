@@ -1,9 +1,16 @@
 package gui;
 
 
+import filters.*;
+import image.PixelImage;
+
 import javax.swing.*;
+import java.io.File;
+import java.io.IOException;
 
 public class FunctionsButtonPanel extends JPanel {
+    private static ImagePanel IP;
+    private static PixelImage img;
     static JButton[] buttonArray = new JButton[7];
     final static String[] names = {"Edge Detect", "Edge Highlight", "Flip Horizontal", "Flip Vertical", "Grayscale", "Sharpen", "Soften"};
 
@@ -31,20 +38,45 @@ public class FunctionsButtonPanel extends JPanel {
         switch (buttonNum) {
             //Edge Detect
             case 0 -> {System.out.println(names[buttonNum]);
-                //new EdgeDetectFilter().filter();
+                new EdgeDetectFilter().filter(img);
+                IP.imageUpdater(img);
             }
             //Edge Highlight
-            case 1 -> System.out.println(names[buttonNum]);
+            case 1 -> {
+                System.out.println(names[buttonNum]);
+                new EdgeHighlightFilter().filter(img);
+                IP.imageUpdater(img);
+            }
             //Flip Horizontal
-            case 2 -> System.out.println(names[buttonNum]);
+            case 2 -> {
+                System.out.println(names[buttonNum]);
+                new FlipHorizontalFilter().filter(img);
+                IP.imageUpdater(img);
+            }
             // Flip Vertical
-            case 3 -> System.out.println(names[buttonNum]);
+            case 3 -> {
+                System.out.println(names[buttonNum]);
+                new FlipVerticalFilter().filter(img);
+                IP.imageUpdater(img);
+            }
             //Grayscale
-            case 4 -> System.out.println(names[buttonNum]);
+            case 4 -> {
+                System.out.println(names[buttonNum]);
+                new GrayscaleFilter().filter(img);
+                IP.imageUpdater(img);
+            }
             //Sharpen
-            case 5 -> System.out.println(names[buttonNum]);
+            case 5 -> {
+                System.out.println(names[buttonNum]);
+                new SharpenFilter().filter(img);
+                IP.imageUpdater(img);
+            }
             //Soften
-            case 6 -> System.out.println(names[buttonNum]);
+            case 6 -> {
+                System.out.println(names[buttonNum]);
+                new SoftenFilter().filter(img);
+                IP.imageUpdater(img);
+            }
         }
     }
 
@@ -58,4 +90,13 @@ public class FunctionsButtonPanel extends JPanel {
             button.setEnabled(b);
         }
     }
+
+    public void setImg(File image) throws IOException {
+        img = PixelImage.load(image);
+    }
+
+    public void setIP(ImagePanel i) {
+        IP = i;
+    }
+
 }

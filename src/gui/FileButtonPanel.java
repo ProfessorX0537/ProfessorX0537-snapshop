@@ -1,9 +1,8 @@
 package gui;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 
 public class FileButtonPanel extends JPanel {
     private static FunctionsButtonPanel functionPanel;
@@ -11,7 +10,7 @@ public class FileButtonPanel extends JPanel {
     private static ImageIcon image;
     static JButton[] buttonArray = new JButton[3];
     final static String[] Title = {"Open...", "Save As...", "Close Image"};
-    private JFileChooser chooser = new JFileChooser();
+    private final JFileChooser chooser = new JFileChooser();
     private final static FileChooserClass FCC = new FileChooserClass();
 
 
@@ -19,14 +18,20 @@ public class FileButtonPanel extends JPanel {
         for (int i = 0; i < buttonArray.length; i++) {
             buttonArray[i] = new JButton(Title[i]);
             int finalI = i;
-            buttonArray[i].addActionListener(e -> FileButtonActionListener(finalI));
+            buttonArray[i].addActionListener(e -> {
+                try {
+                    FileButtonActionListener(finalI);
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            });
             add(buttonArray[i]);
         }
         buttonArray[1].setEnabled(false);
         buttonArray[2].setEnabled(false);
     }
 
-    private void FileButtonActionListener(int buttonNum) {
+    private void FileButtonActionListener(int buttonNum) throws IOException {
         switch(buttonNum) {
             //Open...
             case 0 -> {
@@ -39,6 +44,7 @@ public class FileButtonPanel extends JPanel {
 
                 image = new ImageIcon(String.valueOf(imageSelected));
                 System.out.println(image);
+                functionPanel.setImg(imageSelected);
                 IP.imageUpdater(image);
             }
             //Save as...
@@ -61,11 +67,6 @@ public class FileButtonPanel extends JPanel {
     public void FileButtonEnabler(boolean b) {
         buttonArray[1].setEnabled(b);
         buttonArray[2].setEnabled(b);
-    }
-
-    //TODO may have to remove
-    public boolean isFileButtonEnabled() {
-        return buttonArray[1].isEnabled() && buttonArray[2].isEnabled();
     }
 
     public void setFunctionPanel(FunctionsButtonPanel f) {

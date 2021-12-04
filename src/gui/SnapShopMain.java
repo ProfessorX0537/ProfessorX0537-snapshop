@@ -4,11 +4,7 @@
 
 package gui;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
 
 /**
  * Runs SnapShop by instantiating and starting the SnapShopGUI.
@@ -37,7 +33,8 @@ public final class SnapShopMain {
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new SnapShopGUI().start();
+                SnapShopGUI SSG = new SnapShopGUI();
+                SSG.start();
             }
         });
     }
