@@ -1,6 +1,5 @@
 package gui;
 
-import filters.EdgeDetectFilter;
 
 import javax.swing.*;
 
