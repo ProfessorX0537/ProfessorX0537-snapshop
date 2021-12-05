@@ -8,8 +8,17 @@ import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Makes a panel and attaches all button to it that performer operations on the image
+ */
 public class FunctionsButtonPanel extends JPanel {
+    /**
+     * ImagePanel Variable will be assigned to current image panel
+     */
     private static ImagePanel IP;
+    /**
+     * PixelImage variable so that filter operations can be performed
+     */
     private static PixelImage img;
     private static final JButton[] buttonArray = new JButton[7];
     private final static String[] names = {"Edge Detect", "Edge Highlight", "Flip Horizontal", "Flip Vertical", "Grayscale", "Sharpen", "Soften"};
@@ -91,10 +100,21 @@ public class FunctionsButtonPanel extends JPanel {
         }
     }
 
+    /**
+     * Sets the variable img to a PixelImage of the image at the
+     * given file.
+     * @param image The File containing the image to be filtered
+     * @throws IOException if the file isn't an image
+     */
     public void setImg(File image) throws IOException {
         img = PixelImage.load(image);
     }
 
+    /**
+     * Sets the ImagePanel variable IP to the current ImagePanel
+     * being used in the JFrame
+     * @param i The ImagePanel being used by JFrame
+     */
     public void setIP(ImagePanel i) {
         IP = i;
     }

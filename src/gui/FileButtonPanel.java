@@ -29,7 +29,7 @@ public class FileButtonPanel extends JPanel {
      */
     final static String[] Title = {"Open...", "Save As...", "Close Image"};
     /**
-     * File chooser variable
+     * New JFileChooser
      */
     private final JFileChooser chooser = new JFileChooser();
     /**
@@ -86,8 +86,7 @@ public class FileButtonPanel extends JPanel {
             case 1 -> {
                 System.out.println(Title[buttonNum]); //TODO testing
 
-                File imageToSave = FCC.saveImage(chooser); //saves file selected by user
-                System.out.println(imageToSave); //TODO testing
+                FCC.saveImage(chooser); //saves file selected by user
             }
             //Close Image
             case 2 -> {
