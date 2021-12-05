@@ -30,6 +30,7 @@ public final class SnapShopMain {
      * @param theArgs Command line arguments.
      */
     public static void main(final String[] theArgs) {
+        //new image panel
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {

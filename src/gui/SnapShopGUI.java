@@ -13,12 +13,14 @@ import java.awt.*;
 public class SnapShopGUI extends JFrame {
     private static final FunctionsButtonPanel functionButtons = new FunctionsButtonPanel();
     private static final FileButtonPanel fileButtons = new FileButtonPanel();
-    public static ImagePanel imagePanel = new ImagePanel();
+
 
     /**
      * 
      */
     public void start() {
+        ImagePanel imagePanel = new ImagePanel(this);
+
         add(functionButtons, BorderLayout.NORTH);
         add(fileButtons, BorderLayout.SOUTH);
         add(imagePanel, BorderLayout.CENTER);

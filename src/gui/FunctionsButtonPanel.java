@@ -11,8 +11,8 @@ import java.io.IOException;
 public class FunctionsButtonPanel extends JPanel {
     private static ImagePanel IP;
     private static PixelImage img;
-    static JButton[] buttonArray = new JButton[7];
-    final static String[] names = {"Edge Detect", "Edge Highlight", "Flip Horizontal", "Flip Vertical", "Grayscale", "Sharpen", "Soften"};
+    private static final JButton[] buttonArray = new JButton[7];
+    private final static String[] names = {"Edge Detect", "Edge Highlight", "Flip Horizontal", "Flip Vertical", "Grayscale", "Sharpen", "Soften"};
 
     /**
      * Constructs a panel with the 7 buttons assigns them and action listener.

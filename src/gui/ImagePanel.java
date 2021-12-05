@@ -9,27 +9,27 @@ public class ImagePanel extends JPanel {
     private static JFrame mainFrame;
     private static JLabel LBL;
 
-    public ImagePanel() {
+    public ImagePanel(SnapShopGUI myGUI) {
+        mainFrame = myGUI;
         LBL = new JLabel(new ImageIcon());
         add(LBL, BorderLayout.CENTER);
-
     }
 
     public void imageUpdater(ImageIcon im) {
         //TODO should update image doesn't idk why
         LBL.setIcon(new ImageIcon(String.valueOf(im)));
-        //reSize();
+        reSize();
     }
 
     public void imageUpdater(PixelImage pi) {
         LBL.setIcon(new ImageIcon(pi));
-        //reSize();
+        reSize();
 
     }
 
     public void imageClearer() {
         LBL.setIcon(new ImageIcon());
-        //reSize();
+        reSize();
     }
 
     private void reSize() {
@@ -38,9 +38,5 @@ public class ImagePanel extends JPanel {
         mainFrame.setMinimumSize(new Dimension(0,0));
         mainFrame.pack();
         mainFrame.setMinimumSize(mainFrame.getSize());
-    }
-
-    public void setMainFrame(JFrame mainFrame) {
-        ImagePanel.mainFrame = mainFrame;
     }
 }
