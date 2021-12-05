@@ -8,7 +8,7 @@ import java.awt.*;
 /**
  * 
  * @author Xavier Hines
- * @version 0.1
+ * @version 12/4/21
  */
 public class SnapShopGUI extends JFrame {
     private static final FunctionsButtonPanel functionButtons = new FunctionsButtonPanel();

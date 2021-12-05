@@ -5,8 +5,17 @@ import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
 
+/**
+ * Class containing methods for JFileChooser to select files and one to save files
+ */
 public class FileChooserClass {
 
+    /**
+     * Establishes a JFileChooser that can only select images and opens to sample
+     * images' directory.
+     * @param chooser JFileChooser passed in
+     * @return File with selected image
+     */
     public File selectImage(JFileChooser chooser) {
         File imageSelected;
         //sets the file chooser to access only files that are in this path

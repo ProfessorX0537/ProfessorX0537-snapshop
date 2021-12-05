@@ -38,5 +38,6 @@ public class ImagePanel extends JPanel {
         mainFrame.setMinimumSize(new Dimension(0,0));
         mainFrame.pack();
         mainFrame.setMinimumSize(mainFrame.getSize());
+
     }
 }
